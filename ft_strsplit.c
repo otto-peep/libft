@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 14:53:58 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/05 18:18:25 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/09 17:00:59 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <string.h>
 #include "libft.h"
 
-static int			words_nb(const char *s, char c)
+static int	words_nb(const char *s, char c)
 {
-	int		i;
+	int	i;
 
-		i = 0;
+	i = 0;
 	while (*s)
 	{
 		while (*s == c)
@@ -33,11 +33,11 @@ static int			words_nb(const char *s, char c)
 	return (i);
 }
 
-static int			word_len(const char *s, char c)
+static int	word_len(const char *s, char c)
 {
-	int		i;
+	int	i;
 
-		i = 0;
+	i = 0;
 	while (*s != c && *s)
 	{
 		i++;
@@ -59,6 +59,8 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	nbword = words_nb(s, c);
 	tab = (char**)malloc(sizeof(char*) * nbword + 1);
+	if (tab == NULL)
+		return (NULL);
 	while (x < nbword && s[y])
 	{
 		while (s[y] == c && s[y])

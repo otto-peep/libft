@@ -6,11 +6,10 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:29:44 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/03 17:24:35 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/05 21:29:14 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_putnbr(int n)

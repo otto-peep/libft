@@ -53,7 +53,13 @@ SRC = ./ft_putchar.c	\
 	./ft_memcmp.c	\
 	./ft_itoa.c		\
 	./ft_strsplit.c	\
-	./ft_strlcat.c
+	./ft_strlcat.c	\
+	./ft_lstnew.c	\
+	./ft_lstdelone.c	\
+	./ft_lstdel.c	\
+	./ft_lstadd.c	\
+	./ft_lstiter.c	\
+	./ft_lstmap.c
 
 OB = ./ft_putchar.o	\
 	./ft_putstr.o	\
@@ -106,12 +112,20 @@ OB = ./ft_putchar.o	\
 	./ft_memcmp.o	\
 	./ft_strsplit.o	\
 	./ft_strlcat.o	\
-	./ft_itoa.o
+	./ft_itoa.o		\
+	./ft_lstnew.o	\
+	./ft_lstdelone.o	\
+	./ft_lstdel.o	\
+	./ft_lstadd.o	\
+	./ft_lstiter.o	\
+	./ft_lstmap.o
+
+HDER = ./libft.h
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC)
+	gcc -Wall -Wextra -Werror -c $(HDER) $(SRC)
 	ar rc $(NAME) $(OB)
 	ranlib $(NAME)
 

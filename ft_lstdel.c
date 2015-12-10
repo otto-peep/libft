@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:14:50 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/05 21:30:10 by pconin           ###   ########.fr       */
+/*   Created: 2015/12/09 17:53:28 by pconin            #+#    #+#             */
+/*   Updated: 2015/12/09 18:38:06 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	a;
-	char	*dst;
-	size_t	b;
+	t_list	*list;
+	t_list	*nxt;
 
-	b = 0;
-	dst = s1;
-	a = ft_strlen(s1);
-	while (s2[b] != '\0')
+	list = *alst;
+	if (alst && del)
 	{
-		dst[a] = s2[b];
-		a++;
-		b++;
+		while (list)
+		{
+			nxt = list->next;
+			del(list->content, list->content_size);
+			free(list);
+			list = nxt;
+		}
 	}
-	dst[a] = '\0';
-	return (s1);
+	*alst = NULL;
 }

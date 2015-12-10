@@ -6,11 +6,10 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:22:12 by pconin            #+#    #+#             */
-/*   Updated: 2015/11/25 17:33:11 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/05 21:26:32 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

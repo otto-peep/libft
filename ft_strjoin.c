@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 17:35:17 by pconin            #+#    #+#             */
-/*   Updated: 2015/11/30 16:49:09 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/07 14:26:39 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int size;
-	char *rtn;
+	int		size;
+	char	*rtn;
 
 	if (!s1 && !s2)
 		return (NULL);
 	if (s1 && s2)
-	{	
+	{
 		size = ft_strlen(s1) + ft_strlen(s2);
-		rtn = malloc(sizeof(char) * (size + 1));
+		rtn = (char *)malloc(sizeof(char) * (size + 1));
 		if (rtn == NULL)
 			return (NULL);
 		ft_strcpy(rtn, s1);

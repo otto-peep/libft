@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 12:32:37 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/05 19:22:23 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/08 14:26:33 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	lendst = 0;
 	nbchar = 0;
 	while (dst[lendst] && lendst < size)
-			lendst++;
+		lendst++;
 	nbchar = size - lendst;
 	lensrc = ft_strlen(src);
 	while (dst[ind] != '\0')

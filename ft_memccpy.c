@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 14:46:35 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/04 19:12:09 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/07 14:40:29 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	i = 0;
 	str1 = (unsigned char *)dest;
 	str2 = (unsigned char *)src;
-	c1 = (unsigned char) c;
+	c1 = (unsigned char)c;
 	while (i < n)
 	{
 		str1[i] = str2[i];

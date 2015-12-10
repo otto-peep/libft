@@ -6,11 +6,10 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:27:43 by pconin            #+#    #+#             */
-/*   Updated: 2015/11/24 18:33:07 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/05 21:29:47 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)

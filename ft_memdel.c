@@ -6,17 +6,17 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 15:55:48 by pconin            #+#    #+#             */
-/*   Updated: 2015/11/27 16:43:54 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/07 14:35:47 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 
-void ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	if (ap)
-	{	
+	{
 		free(*ap);
 		*ap = NULL;
 	}

@@ -6,11 +6,10 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:43:40 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/03 12:55:03 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/05 21:26:22 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 int		ft_atoi(const char *str)

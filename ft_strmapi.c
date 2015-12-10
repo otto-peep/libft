@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 18:11:42 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/03 17:07:05 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/08 15:05:42 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	char			*str;
 	unsigned int	a;
@@ -25,13 +25,13 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 	if (s && f)
 	{
 		a = (char)ft_strlen(s);
-		str = (char *) malloc(sizeof (char) * (a + 1));
+		str = (char *)malloc(sizeof(char) * (a + 1));
 		while (i != a)
 		{
 			str[i] = f(i, s[i]);
 			i++;
 		}
 		str[i] = '\0';
-	}	
+	}
 	return (str);
 }

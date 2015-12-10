@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:14:50 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/05 21:30:10 by pconin           ###   ########.fr       */
+/*   Created: 2015/12/09 19:01:30 by pconin            #+#    #+#             */
+/*   Updated: 2015/12/10 13:59:07 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	a;
-	char	*dst;
-	size_t	b;
+	t_list	*newlist;
 
-	b = 0;
-	dst = s1;
-	a = ft_strlen(s1);
-	while (s2[b] != '\0')
+	newlist = NULL;
+	if (lst && f)
 	{
-		dst[a] = s2[b];
-		a++;
-		b++;
+		while (lst)
+		{
+			newlist = ft_lstnew(lst->content, lst->content_size);
+			if (newlist == NULL)
+				return (NULL);
+			newlist = f(newlist);
+			newlist = newlist->next;
+			lst = lst->next;
+		}
+		newlist->next = NULL;
 	}
-	dst[a] = '\0';
-	return (s1);
+	return (newlist);
 }
