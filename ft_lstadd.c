@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 18:38:12 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/09 18:53:08 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/11 15:42:49 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }
-		

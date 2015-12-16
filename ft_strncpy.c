@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:32:05 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/05 15:05:43 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/13 17:43:56 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	size_t i;
 
 	i = 0;
-	if (!src)
-		return (NULL);
 	while (i < n && src[i])
 	{
 		dst[i] = src[i];

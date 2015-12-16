@@ -1,7 +1,5 @@
 NAME = libft.a
 
-TESTEXE = programmetest
-
 SRC = ./ft_putchar.c	\
 	./ft_putstr.c	\
 	./ft_strdup.c	\
@@ -59,7 +57,13 @@ SRC = ./ft_putchar.c	\
 	./ft_lstdel.c	\
 	./ft_lstadd.c	\
 	./ft_lstiter.c	\
-	./ft_lstmap.c
+	./ft_lstmap.c	\
+	./ft_isspace.c	\
+	./ft_isblank.c	\
+	./ft_isupper.c	\
+	./ft_sqrt.c		\
+	./ft_lstaddback.c	\
+	./ft_printbits.c
 
 OB = ./ft_putchar.o	\
 	./ft_putstr.o	\
@@ -118,14 +122,20 @@ OB = ./ft_putchar.o	\
 	./ft_lstdel.o	\
 	./ft_lstadd.o	\
 	./ft_lstiter.o	\
-	./ft_lstmap.o
+	./ft_lstmap.o	\
+	./ft_isspace.o	\
+	./ft_isblank.o	\
+	./ft_isupper.o	\
+	./ft_sqrt.o		\
+	./ft_lstaddback.o	\
+	./ft_printbits.o
 
 HDER = ./libft.h
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(HDER) $(SRC)
+	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc $(NAME) $(OB)
 	ranlib $(NAME)
 

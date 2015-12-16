@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:09:38 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/13 18:14:38 by pconin           ###   ########.fr       */
+/*   Created: 2015/12/11 14:58:03 by pconin            #+#    #+#             */
+/*   Updated: 2015/12/14 14:20:38 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+int		ft_sqrt(int nb)
 {
-	char	*str;
+	int x;
 
-	str = NULL;
-	str = (char *)ft_memalloc(size + 1);
-	if (str == NULL)
-		return (NULL);
+	x = 0;
+	if (nb <= 0)
+		return (0);
+	while (x * x < nb)
+		x++;
+	if (x * x == nb)
+		return (x);
 	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+		return (0);
 }

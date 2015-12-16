@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:09:38 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/13 18:14:38 by pconin           ###   ########.fr       */
+/*   Created: 2015/12/11 14:39:35 by pconin            #+#    #+#             */
+/*   Updated: 2015/12/11 14:42:31 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+int		ft_isupper(int c)
 {
-	char	*str;
-
-	str = NULL;
-	str = (char *)ft_memalloc(size + 1);
-	if (str == NULL)
-		return (NULL);
+	if (c < 91 && c > 64)
+		return (1);
 	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+		return (0);
 }

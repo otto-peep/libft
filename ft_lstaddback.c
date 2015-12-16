@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:09:38 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/13 18:14:38 by pconin           ###   ########.fr       */
+/*   Created: 2015/12/11 15:20:38 by pconin            #+#    #+#             */
+/*   Updated: 2015/12/14 19:48:56 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_lstaddback(t_list **alst, t_list *new)
 {
-	char	*str;
+	t_list	*balst;
 
-	str = NULL;
-	str = (char *)ft_memalloc(size + 1);
-	if (str == NULL)
-		return (NULL);
-	else
+	balst = *alst;
+	if (alst && new)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		while (balst)
+			balst = balst->next;
+		balst->next = new;
+		new->next = NULL;
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 18:55:13 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/09 19:22:54 by pconin           ###   ########.fr       */
+/*   Updated: 2015/12/11 14:32:22 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (f && lst)
 	{
