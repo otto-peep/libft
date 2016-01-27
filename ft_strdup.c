@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:06:18 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/14 16:24:10 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:40:12 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,21 @@
 
 char		*ft_strdup(const char *s1)
 {
+	char	*ret;
 	int		i;
-	char	*str;
+	int		len;
 
 	i = 0;
-	str = NULL;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (str == NULL)
+	ret = NULL;
+	len = ft_strlen(s1);
+	ret = (char *)ft_memalloc(len + 1);
+	if (ret == NULL)
 		return (NULL);
-	ft_strcpy(str, s1);
-	return (str);
+	while (s1[i] != '\0')
+	{
+		ret[i] = s1[i];
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
 }

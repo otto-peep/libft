@@ -6,34 +6,43 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:43:40 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/13 15:11:55 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:27:38 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_atoi(const char *str)
+static int	ft_sign(const char *str, int i)
 {
-	int x;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		i++;
+		if (str[i] == '+' || str[i] == '-')
+			return (0);
+	}
+	return (i);
+}
+
+int			ft_atoi(const char *str)
+{
 	int i;
-	int n;
+	int ret;
+	int correc;
 
 	i = 0;
-	x = 0;
-	n = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
+	ret = 0;
+	correc = 1;
+	while (str[i] == '\v' || str[i] == '\r' || str[i] == '\f'
+			|| str[i] == '\t' || str[i] == '\n' || str[i] == ' ')
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
+		correc = -1;
+	i = ft_sign(str, i);
+	while (str[i] != '\0')
 	{
-		if (str[i] == '-')
-			n = -1;
+		if (str[i] >= 48 && str[i] <= 57)
+			ret = (ret * 10) + (str[i] - 48);
+		if (str[i] > '9' || str[i] < '0')
+			return (ret * correc);
 		i++;
 	}
-	while (ft_isdigit(str[i]) == 1)
-	{
-		x = x * 10 + str[i] - 48;
-		i++;
-	}
-	return (x * n);
+	return (ret * correc);
 }

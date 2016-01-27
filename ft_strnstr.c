@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 10:17:03 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/13 18:15:26 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:45:13 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t index1;
-	size_t index2;
-	size_t len2;
+	size_t	x;
+	size_t	y;
+	size_t	check;
 
-	len2 = ft_strlen(s2);
-	index1 = 0;
+	check = ft_strlen(s2);
+	x = 0;
 	if (!s2[0])
-		return ((char*)s1);
-	while (index1 < n && s1[index1] != '\0')
+		return ((char *)s1);
+	while (x < n && s1[x] != '\0')
 	{
-		index2 = 0;
-		while (s2[index2] == s1[index1 + index2] && s2[index1])
+		y = 0;
+		while (s2[y] == s1[x + y] && s2[y])
 		{
-			if (index1 + index2 >= n)
+			if (x + y >= n)
 				return (NULL);
-			if (index2 == len2 - 1)
-				return ((char*)&s1[index1]);
-			index2++;
+			if (y == check - 1)
+				return ((char*)&s1[x]);
+			y++;
 		}
-		index1++;
+		x++;
 	}
 	return (NULL);
 }

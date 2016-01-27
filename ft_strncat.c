@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 16:08:23 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/08 13:14:02 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:48:44 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t	a;
-	char	*dst;
-	size_t	b;
+	size_t len;
+	size_t a;
 
-	b = 0;
-	dst = s1;
-	a = ft_strlen(s1);
-	while (s2[b] != '\0' && b < n)
+	a = 0;
+	len = ft_strlen(s1);
+	while (s2[a] && a < n)
 	{
-		dst[a] = s2[b];
+		s1[len + a] = s2[a];
 		a++;
-		b++;
 	}
-	dst[a] = '\0';
+	s1[len + a] = '\0';
 	return (s1);
 }

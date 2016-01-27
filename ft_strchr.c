@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 17:18:16 by pconin            #+#    #+#             */
-/*   Updated: 2015/12/04 19:04:38 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:37:57 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		a;
-	char	*b;
+	int a;
 
-	b = (char *)s;
 	a = 0;
-	while (b[a] != c && b[a] != '\0')
+	while (s[a] != '\0')
+	{
+		if (s[a] == c)
+			return ((char *)&s[a]);
 		a++;
-	if (b[a] == c)
-		return (&b[a]);
+	}
+	if (s[a] == c)
+		return ((char *)&s[a]);
 	else
 		return (NULL);
 }

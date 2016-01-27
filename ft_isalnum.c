@@ -6,15 +6,15 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 13:58:15 by pconin            #+#    #+#             */
-/*   Updated: 2015/11/26 14:04:00 by pconin           ###   ########.fr       */
+/*   Updated: 2016/01/11 14:28:36 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if (c > 47 && c < 58)
-		return (1);
-	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
 		return (1);
 	else
 		return (0);
