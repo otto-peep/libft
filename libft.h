@@ -6,7 +6,7 @@
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:32:41 by pconin            #+#    #+#             */
-/*   Updated: 2016/03/09 09:01:59 by pconin           ###   ########.fr       */
+/*   Updated: 2016/03/09 12:11:54 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define LIBFT_H
 # include <string.h>
+#include "get_next_line.h"
 
 typedef struct		s_list
 {
