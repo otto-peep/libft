@@ -1,6 +1,9 @@
 NAME = libft.a
 
-SRC =  ./get_next_line.c \
+SRC = ./ft_lastchr.c	\
+	./ft_putnbrs.c	\
+	./ft_putstrs.c	\
+	./get_next_line.c \
 	./ft_putchar.c	\
 	./ft_putstr.c	\
 	./ft_strdup.c	\
@@ -66,7 +69,10 @@ SRC =  ./get_next_line.c \
 	./ft_lstaddback.c	\
 	./ft_printbits.c
 
-OB =  ./get_next_line.o \
+OB =  ./ft_lastchr.o	\
+	./ft_putnbrs.o	\
+	./ft_putstrs.o	\
+	./get_next_line.o	\
 	./ft_putchar.o	\
 	./ft_putstr.o	\
 	./ft_strdup.o	\
@@ -132,8 +138,7 @@ OB =  ./get_next_line.o \
 	./ft_lstaddback.o	\
 	./ft_printbits.o
 
-HDER = ./libft.h \
-	   ./get_next_line.h
+HDER = ./libft.h
 
 all: $(NAME)
 
