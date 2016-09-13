@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pconin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/07 18:55:05 by pconin            #+#    #+#             */
-/*   Updated: 2016/02/17 19:35:17 by pconin           ###   ########.fr       */
+/*   Created: 2015/11/27 14:46:35 by pconin            #+#    #+#             */
+/*   Updated: 2016/01/11 14:31:12 by pconin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
+#include <string.h>
 
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 1
-# define SPLITTER '\n'
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	unsigned char	car;
 
-int		get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	car = (unsigned char)c;
+	str1 = (unsigned char *)dest;
+	str2 = (unsigned char *)src;
+	while (i < n)
+	{
+		str1[i] = str2[i];
+		if (str1[i] == car)
+		{
+			i++;
+			return (&dest[i]);
+		}
+		i++;
+	}
+	return (NULL);
+}
