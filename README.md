@@ -6,3 +6,6 @@
 # Installation
 `git clone https://github.com/otto-peep/libft.git && cd ./libft && make`
 include "libft.h" in your project
+
+# Rate
+116/100
